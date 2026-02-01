@@ -37,9 +37,24 @@ Personal creative website for Nathan Eckenrode with podcast feeds and content st
 
 ---
 
-## Local Development
+## Deployment
 
-**Local folder:** `/Users/nathaneckenrode/n8k99-site/`
+**Production (DigitalOcean Droplet):**
+- **Host:** 144.126.251.126 (eckenrodemuziekopname.com)
+- **App Directory:** `/opt/n8k99-site` (git-cloned, managed by PM2)
+- **Process Manager:** PM2 (`pm2 restart n8k99-site`)
+- **Web Server:** Nginx (reverse proxy, 80/443 → localhost:3000)
+- **Deployment Flow:**
+  1. Push to GitHub (`n8k99/dragonpunk-noir-theme`)
+  2. `cd /opt/n8k99-site && git pull`
+  3. `npm run build`
+  4. PM2 auto-restarts on file changes
+  5. Nginx proxies traffic to port 3000
+
+**Local Development:**
+- **Local folder:** `/Users/nathaneckenrode/n8k99-site/`
+- **Dev server:** `npm run dev` (port 3000)
+- **Testing:** Push to GitHub, droplet pulls via `git pull` + rebuilds
 
 ---
 
