@@ -1,0 +1,13 @@
+<div class="stats-grid">
+  {{#each system.stats as |stat key|}}
+  <div class="stat-block">
+    <div class="stat-header">
+      <h4 class="stat-name">{{key}}</h4>
+    </div>
+    <div class="stat-content">
+      <input type="number" name="system.stats.{{key}}.value" value="{{stat.value}}" data-dtype="Number"/>
+      <div class="stat-modifier">{{#if (gte stat.mod 0)}}+{{/if}}{{stat.mod}}</div>
+    </div>
+  </div>
+  {{/each}}
+</div>

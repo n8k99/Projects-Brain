@@ -1,0 +1,51 @@
+{
+  "THIRTEEN_TOWERS": {
+    "SheetLabels": {
+      "Actor": "Thirteen Towers Actor",
+      "Item": "Thirteen Towers Item"
+    },
+    "Stats": {
+      "body": "Body",
+      "reflex": "Reflex",
+      "charm": "Charm",
+      "sense": "Sense",
+      "spirit": "Spirit",
+      "mind": "Mind",
+      "luck": "Luck",
+      "will": "Will"
+    },
+    "Archetypes": {
+      "shieldbearer": "Shieldbearer",
+      "silentknife": "Silentknife",
+      "songbearer": "Songbearer",
+      "oathbound": "Oathbound",
+      "patternweaver": "Patternweaver",
+      "edgerunner": "Edgerunner",
+      "linekeeper": "Linekeeper"
+    },
+    "Domains": {
+      "martial": "Martial",
+      "covert": "Covert",
+      "magicTech": "Magic/Tech",
+      "spiritual": "Spiritual",
+      "economic": "Economic",
+      "political": "Political"
+    },
+    "Position": {
+      "controlled": "Controlled",
+      "risky": "Risky",
+      "desperate": "Desperate"
+    },
+    "Effect": {
+      "limited": "Limited",
+      "standard": "Standard",
+      "great": "Great"
+    },
+    "Difficulty": {
+      "trivial": "Trivial (8)",
+      "standard": "Standard (12)",
+      "hard": "Hard (16)",
+      "extreme": "Extreme (20+)"
+    }
+  }
+}

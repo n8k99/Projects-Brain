@@ -1,0 +1,265 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Character Name"/></h1>
+      <div class="resource-row">
+        <div class="resource">
+          <label class="resource-label">Culture</label>
+          <select name="system.culture">
+            <option value="">Select Culture</option>
+            {{#each cultures}}
+            <option value="{{this}}" {{#if (eq ../system.culture this)}}selected{{/if}}>{{this}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="resource">
+          <label class="resource-label">Background</label>
+          <input type="text" name="system.background" value="{{system.background}}" placeholder="Background"/>
+        </div>
+      </div>
+      <div class="resource-row">
+        <div class="resource">
+          <label class="resource-label">Archetype</label>
+          <select name="system.archetype">
+            <option value="">Select Archetype</option>
+            {{#each archetypes}}
+            <option value="@key" {{#if (eq ../system.archetype @key)}}selected{{/if}}>{{this}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="resource">
+          <label class="resource-label">Primary Domain</label>
+          <select name="system.primaryDomain">
+            <option value="">Select Domain</option>
+            {{#each domains}}
+            <option value="@key" {{#if (eq ../system.primaryDomain @key)}}selected{{/if}}>{{this}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="stats">Stats</a>
+    <a class="item" data-tab="combat">Combat</a>
+    <a class="item" data-tab="items">Equipment</a>
+    <a class="item" data-tab="domains">Domains</a>
+    <a class="item" data-tab="biography">Biography</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Stats Tab --}}
+    <div class="tab stats" data-group="primary" data-tab="stats">
+      <div class="stats-grid">
+        {{#each system.stats as |stat key|}}
+        <div class="stat-block">
+          <div class="stat-header">
+            <h4 class="stat-name">{{key}}</h4>
+          </div>
+          <div class="stat-content">
+            <input type="number" name="system.stats.{{key}}.value" value="{{stat.value}}" data-dtype="Number"/>
+            <div class="stat-modifier">{{#if (gte stat.mod 0)}}+{{/if}}{{stat.mod}}</div>
+            <button class="stat-roll rollable" data-stat="{{key}}" type="button">
+              <i class="fas fa-dice-d20"></i>
+            </button>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+
+      <div class="harm-section">
+        <h3>Harm</h3>
+        <div class="harm-levels">
+          <div class="harm-level">
+            <input type="checkbox" name="system.harm.level1.value" {{checked system.harm.level1.value}}/>
+            <label>Level 1 (-1)</label>
+            <input type="text" name="system.harm.level1.description" value="{{system.harm.level1.description}}" placeholder="Description"/>
+          </div>
+          <div class="harm-level">
+            <input type="checkbox" name="system.harm.level2.value" {{checked system.harm.level2.value}}/>
+            <label>Level 2 (-2)</label>
+            <input type="text" name="system.harm.level2.description" value="{{system.harm.level2.description}}" placeholder="Description"/>
+          </div>
+          <div class="harm-level">
+            <input type="checkbox" name="system.harm.level3.value" {{checked system.harm.level3.value}}/>
+            <label>Level 3 (-3)</label>
+            <input type="text" name="system.harm.level3.description" value="{{system.harm.level3.description}}" placeholder="Description"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="advanced-systems">
+        <div class="moral-friction">
+          <h3>Moral Friction</h3>
+          <label><input type="checkbox" name="system.moralFriction.active" {{checked system.moralFriction.active}}/> Active</label>
+          <label>Severity: <input type="number" name="system.moralFriction.severity" value="{{system.moralFriction.severity}}" data-dtype="Number"/></label>
+          <input type="text" name="system.moralFriction.reason" value="{{system.moralFriction.reason}}" placeholder="Reason"/>
+        </div>
+        <div class="draconic-attention">
+          <h3>Draconic Attention</h3>
+          <input type="number" name="system.draconicAttention.value" value="{{system.draconicAttention.value}}" data-dtype="Number"/> / {{system.draconicAttention.max}}
+        </div>
+      </div>
+    </div>
+
+    {{!-- Combat Tab --}}
+    <div class="tab combat" data-group="primary" data-tab="combat">
+      <div class="resources-grid">
+        <div class="resource-block">
+          <h3>Health</h3>
+          <div class="resource-content">
+            <input type="number" name="system.health.value" value="{{system.health.value}}" data-dtype="Number"/> / {{system.health.max}}
+          </div>
+        </div>
+        <div class="resource-block">
+          <h3>Resolve</h3>
+          <div class="resource-content">
+            <input type="number" name="system.resolve.value" value="{{system.resolve.value}}" data-dtype="Number"/> / {{system.resolve.max}}
+          </div>
+        </div>
+        <div class="resource-block">
+          <h3>Defense</h3>
+          <div class="resource-content">
+            <div class="defense-value">{{system.defense.value}}</div>
+            <small>(10 + REF {{system.stats.reflex.mod}} + Armor {{system.defense.armor}})</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="principles-section">
+        <h3>Principles</h3>
+        <ol class="item-list">
+          {{#each principles}}
+          <li class="item flexrow" data-item-id="{{this._id}}">
+            <div class="item-name">{{this.name}}</div>
+            <div class="item-controls">
+              <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </div>
+          </li>
+          {{/each}}
+        </ol>
+        <div class="item-controls">
+          <a class="item-control item-create" data-type="principle" title="Create Principle"><i class="fas fa-plus"></i> Add Principle</a>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Items Tab --}}
+    <div class="tab items" data-group="primary" data-tab="items">
+      <div class="items-section">
+        <h3>Weapons</h3>
+        <ol class="item-list">
+          {{#each weapons}}
+          <li class="item flexrow" data-item-id="{{this._id}}">
+            <div class="item-image"><img src="{{this.img}}" title="{{this.name}}" width="24" height="24"/></div>
+            <h4 class="item-name">{{this.name}}</h4>
+            <div class="item-detail">{{this.system.damage}}{{#if this.system.damageBonus}}+{{this.system.damageBonus}}{{/if}}</div>
+            <div class="item-controls">
+              <a class="item-control weapon-attack" title="Attack"><i class="fas fa-fist-raised"></i></a>
+              <a class="item-control weapon-damage" title="Damage"><i class="fas fa-burst"></i></a>
+              <a class="item-control item-edit" title="Edit"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete" title="Delete"><i class="fas fa-trash"></i></a>
+            </div>
+          </li>
+          {{/each}}
+        </ol>
+        <div class="item-controls">
+          <a class="item-control item-create" data-type="weapon" title="Create Weapon"><i class="fas fa-plus"></i> Add Weapon</a>
+        </div>
+      </div>
+
+      <div class="items-section">
+        <h3>Armor</h3>
+        <ol class="item-list">
+          {{#each armor}}
+          <li class="item flexrow" data-item-id="{{this._id}}">
+            <div class="item-image"><img src="{{this.img}}" title="{{this.name}}" width="24" height="24"/></div>
+            <h4 class="item-name">{{this.name}}</h4>
+            <div class="item-detail">+{{this.system.armorBonus}} Defense</div>
+            <label class="item-equipped">
+              <input type="checkbox" {{checked this.system.equipped}} data-item-id="{{this._id}}"/> Equipped
+            </label>
+            <div class="item-controls">
+              <a class="item-control item-edit" title="Edit"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete" title="Delete"><i class="fas fa-trash"></i></a>
+            </div>
+          </li>
+          {{/each}}
+        </ol>
+        <div class="item-controls">
+          <a class="item-control item-create" data-type="armor" title="Create Armor"><i class="fas fa-plus"></i> Add Armor</a>
+        </div>
+      </div>
+
+      <div class="items-section">
+        <h3>Equipment</h3>
+        <ol class="item-list">
+          {{#each equipment}}
+          <li class="item flexrow" data-item-id="{{this._id}}">
+            <div class="item-image"><img src="{{this.img}}" title="{{this.name}}" width="24" height="24"/></div>
+            <h4 class="item-name">{{this.name}}</h4>
+            <div class="item-controls">
+              <a class="item-control item-edit" title="Edit"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete" title="Delete"><i class="fas fa-trash"></i></a>
+            </div>
+          </li>
+          {{/each}}
+        </ol>
+        <div class="item-controls">
+          <a class="item-control item-create" data-type="equipment" title="Create Equipment"><i class="fas fa-plus"></i> Add Equipment</a>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Domains Tab --}}
+    <div class="tab domains" data-group="primary" data-tab="domains">
+      <h3>Domain Advancement</h3>
+      <div class="domains-grid">
+        {{#each system.advancement.domains as |domain key|}}
+        <div class="domain-block">
+          <h4>{{lookup ../domains key}}</h4>
+          <div>Level: {{domain.level}}</div>
+        </div>
+        {{/each}}
+      </div>
+
+      <div class="tree-nodes-section">
+        <h3>Tree Nodes</h3>
+        <ol class="item-list">
+          {{#each treeNodes}}
+          <li class="item flexrow" data-item-id="{{this._id}}">
+            <div class="item-name">
+              <h4>{{this.name}}</h4>
+              <small>{{this.system.domain}} - {{this.system.tree}} ({{this.system.tier}})</small>
+            </div>
+            <label class="item-unlocked">
+              <input type="checkbox" {{checked this.system.unlocked}} disabled/> Unlocked
+            </label>
+            <div class="item-controls">
+              <a class="item-control item-edit" title="Edit"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete" title="Delete"><i class="fas fa-trash"></i></a>
+            </div>
+          </li>
+          {{/each}}
+        </ol>
+        <div class="item-controls">
+          <a class="item-control item-create" data-type="treeNode" title="Create Tree Node"><i class="fas fa-plus"></i> Add Tree Node</a>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Biography Tab --}}
+    <div class="tab biography" data-group="primary" data-tab="biography">
+      {{editor enrichedBiography target="system.biography" button=true owner=owner editable=editable}}
+    </div>
+
+  </section>
+</form>

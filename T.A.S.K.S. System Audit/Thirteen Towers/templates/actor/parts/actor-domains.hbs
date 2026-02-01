@@ -1,0 +1,8 @@
+<div class="domains-grid">
+  {{#each system.advancement.domains as |domain key|}}
+  <div class="domain-block">
+    <h4>{{key}}</h4>
+    <div>Level: {{domain.level}}</div>
+  </div>
+  {{/each}}
+</div>

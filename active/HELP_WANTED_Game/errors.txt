@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 264: end of line expected.
+    jump demo_routing_[character_department]
+                      ^
+
+Ren'Py Version: Ren'Py 8.4.1.25072401
+Fri Sep  5 12:55:47 2025

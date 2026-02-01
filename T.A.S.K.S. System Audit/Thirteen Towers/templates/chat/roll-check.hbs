@@ -1,0 +1,24 @@
+<div class="thirteen-towers roll-check">
+  <div class="roll-result {{cssClass}}">
+    <div class="roll-formula">{{formula}}</div>
+    <div class="roll-total">
+      <span class="total-value">{{total}}</span>
+      <span class="vs">vs</span>
+      <span class="difficulty-value">DC {{difficulty}}</span>
+    </div>
+    <div class="success-level">
+      {{#if (eq successLevel "success")}}
+        <strong>Success!</strong> You beat the difficulty.
+      {{else if (eq successLevel "partial")}}
+        <strong>Partial Success!</strong> You succeed with a complication.
+      {{else}}
+        <strong>Failure.</strong> You don't achieve the goal.
+      {{/if}}
+    </div>
+    <div class="roll-breakdown">
+      <small>
+        (Stat: {{#if (gte statMod 0)}}+{{/if}}{{statMod}}, Edge: {{#if (gte edge 0)}}+{{/if}}{{edge}})
+      </small>
+    </div>
+  </div>
+</div>

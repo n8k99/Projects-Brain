@@ -1,0 +1,201 @@
+{
+  "Actor": {
+    "types": ["character", "npc"],
+    "templates": {
+      "base": {
+        "health": {
+          "value": 10,
+          "max": 10
+        },
+        "resolve": {
+          "value": 3,
+          "max": 3
+        },
+        "defense": {
+          "value": 10,
+          "base": 10,
+          "armor": 0
+        },
+        "biography": ""
+      },
+      "stats": {
+        "stats": {
+          "body": {
+            "value": 10,
+            "mod": 0
+          },
+          "reflex": {
+            "value": 10,
+            "mod": 0
+          },
+          "charm": {
+            "value": 10,
+            "mod": 0
+          },
+          "sense": {
+            "value": 10,
+            "mod": 0
+          },
+          "spirit": {
+            "value": 10,
+            "mod": 0
+          },
+          "mind": {
+            "value": 10,
+            "mod": 0
+          },
+          "luck": {
+            "value": 10,
+            "mod": 0
+          },
+          "will": {
+            "value": 10,
+            "mod": 0
+          }
+        }
+      }
+    },
+    "character": {
+      "templates": ["base", "stats"],
+      "culture": "",
+      "background": "",
+      "archetype": "",
+      "primaryDomain": "",
+      "principles": [],
+      "harm": {
+        "level1": {
+          "value": false,
+          "description": "",
+          "penalty": -1
+        },
+        "level2": {
+          "value": false,
+          "description": "",
+          "penalty": -2
+        },
+        "level3": {
+          "value": false,
+          "description": "",
+          "penalty": -3
+        }
+      },
+      "moralFriction": {
+        "active": false,
+        "severity": 0,
+        "reason": ""
+      },
+      "draconicAttention": {
+        "value": 0,
+        "max": 5
+      },
+      "advancement": {
+        "domains": {
+          "martial": {
+            "level": 0,
+            "trees": {}
+          },
+          "covert": {
+            "level": 0,
+            "trees": {}
+          },
+          "magicTech": {
+            "level": 0,
+            "trees": {}
+          },
+          "spiritual": {
+            "level": 0,
+            "trees": {}
+          },
+          "economic": {
+            "level": 0,
+            "trees": {}
+          },
+          "political": {
+            "level": 0,
+            "trees": {}
+          }
+        }
+      }
+    },
+    "npc": {
+      "templates": ["base", "stats"],
+      "npcType": "mook",
+      "goal": "",
+      "method": "",
+      "secret": "",
+      "connection": "",
+      "knowledgeTier": 0
+    }
+  },
+  "Item": {
+    "types": ["archetype", "domain", "treeNode", "weapon", "armor", "equipment", "tag", "principle"],
+    "templates": {
+      "base": {
+        "description": ""
+      },
+      "physical": {
+        "quantity": 1,
+        "weight": 0,
+        "equipped": false
+      },
+      "edgeProvider": {
+        "edge": 0,
+        "condition": ""
+      }
+    },
+    "archetype": {
+      "templates": ["base", "edgeProvider"],
+      "archetypeType": "shieldbearer",
+      "coreIdentity": "",
+      "edgeConditions": [],
+      "principles": []
+    },
+    "domain": {
+      "templates": ["base"],
+      "domainType": "martial",
+      "focus": "",
+      "shapes": [],
+      "keyTrees": []
+    },
+    "treeNode": {
+      "templates": ["base"],
+      "domain": "martial",
+      "tree": "",
+      "tier": "novice",
+      "trigger": "",
+      "effect": "",
+      "unlocked": false,
+      "prerequisites": []
+    },
+    "weapon": {
+      "templates": ["base", "physical", "edgeProvider"],
+      "damage": "1d6",
+      "damageBonus": 0,
+      "attackStat": "body",
+      "weaponType": "light",
+      "twoHanded": false,
+      "tags": []
+    },
+    "armor": {
+      "templates": ["base", "physical"],
+      "armorBonus": 0,
+      "armorType": "light",
+      "tags": []
+    },
+    "equipment": {
+      "templates": ["base", "physical", "edgeProvider"],
+      "equipmentType": "gear",
+      "tags": []
+    },
+    "tag": {
+      "templates": ["base", "edgeProvider"],
+      "tagType": "character",
+      "active": true
+    },
+    "principle": {
+      "templates": ["base"],
+      "active": true,
+      "severity": 0
+    }
+  }
+}

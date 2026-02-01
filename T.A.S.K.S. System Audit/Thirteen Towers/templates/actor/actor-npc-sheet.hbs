@@ -1,0 +1,126 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="80" width="80"/>
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="NPC Name"/></h1>
+      <div class="resource-row">
+        <div class="resource">
+          <label class="resource-label">Type</label>
+          <select name="system.npcType">
+            <option value="mook" {{#if (eq system.npcType "mook")}}selected{{/if}}>Mook</option>
+            <option value="lieutenant" {{#if (eq system.npcType "lieutenant")}}selected{{/if}}>Lieutenant</option>
+            <option value="boss" {{#if (eq system.npcType "boss")}}selected{{/if}}>Boss</option>
+            <option value="custom" {{#if (eq system.npcType "custom")}}selected{{/if}}>Custom</option>
+          </select>
+        </div>
+        <div class="resource">
+          <label class="resource-label">Knowledge Tier</label>
+          <input type="number" name="system.knowledgeTier" value="{{system.knowledgeTier}}" data-dtype="Number" min="0" max="4"/>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="stats">Stats</a>
+    <a class="item" data-tab="combat">Combat</a>
+    <a class="item" data-tab="narrative">Narrative</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Stats Tab --}}
+    <div class="tab stats" data-group="primary" data-tab="stats">
+      <div class="stats-grid">
+        {{#each system.stats as |stat key|}}
+        <div class="stat-block">
+          <div class="stat-header">
+            <h4 class="stat-name">{{key}}</h4>
+          </div>
+          <div class="stat-content">
+            <input type="number" name="system.stats.{{key}}.value" value="{{stat.value}}" data-dtype="Number"/>
+            <div class="stat-modifier">{{#if (gte stat.mod 0)}}+{{/if}}{{stat.mod}}</div>
+            <button class="stat-roll rollable" data-stat="{{key}}" type="button">
+              <i class="fas fa-dice-d20"></i>
+            </button>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+
+    {{!-- Combat Tab --}}
+    <div class="tab combat" data-group="primary" data-tab="combat">
+      <div class="resources-grid">
+        <div class="resource-block">
+          <h3>Health</h3>
+          <div class="resource-content">
+            <input type="number" name="system.health.value" value="{{system.health.value}}" data-dtype="Number"/>
+            <span>/</span>
+            <input type="number" name="system.health.max" value="{{system.health.max}}" data-dtype="Number"/>
+          </div>
+        </div>
+        <div class="resource-block">
+          <h3>Defense</h3>
+          <div class="resource-content">
+            <input type="number" name="system.defense.value" value="{{system.defense.value}}" data-dtype="Number"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="items-section">
+        <h3>Weapons</h3>
+        <ol class="item-list">
+          {{#each weapons}}
+          <li class="item flexrow" data-item-id="{{this._id}}">
+            <div class="item-image"><img src="{{this.img}}" title="{{this.name}}" width="24" height="24"/></div>
+            <h4 class="item-name">{{this.name}}</h4>
+            <div class="item-detail">{{this.system.damage}}{{#if this.system.damageBonus}}+{{this.system.damageBonus}}{{/if}}</div>
+            <div class="item-controls">
+              <a class="item-control weapon-attack" title="Attack"><i class="fas fa-fist-raised"></i></a>
+              <a class="item-control weapon-damage" title="Damage"><i class="fas fa-burst"></i></a>
+              <a class="item-control item-edit" title="Edit"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete" title="Delete"><i class="fas fa-trash"></i></a>
+            </div>
+          </li>
+          {{/each}}
+        </ol>
+        <div class="item-controls">
+          <a class="item-control item-create" data-type="weapon" title="Create Weapon"><i class="fas fa-plus"></i> Add Weapon</a>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Narrative Tab --}}
+    <div class="tab narrative" data-group="primary" data-tab="narrative">
+      <div class="npc-framework">
+        <div class="framework-field">
+          <label>Goal (What they want):</label>
+          <input type="text" name="system.goal" value="{{system.goal}}" placeholder="What does this NPC want?"/>
+        </div>
+        <div class="framework-field">
+          <label>Method (How they pursue it):</label>
+          <input type="text" name="system.method" value="{{system.method}}" placeholder="How do they achieve their goals?"/>
+        </div>
+        <div class="framework-field">
+          <label>Secret (What they're hiding):</label>
+          <input type="text" name="system.secret" value="{{system.secret}}" placeholder="What are they hiding?"/>
+        </div>
+        <div class="framework-field">
+          <label>Connection (To player characters):</label>
+          <input type="text" name="system.connection" value="{{system.connection}}" placeholder="How do they connect to the PCs?"/>
+        </div>
+      </div>
+
+      <div class="biography-section">
+        <h3>Biography / Notes</h3>
+        {{editor enrichedBiography target="system.biography" button=true owner=owner editable=editable}}
+      </div>
+    </div>
+
+  </section>
+</form>

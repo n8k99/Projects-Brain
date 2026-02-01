@@ -1,0 +1,205 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  {{!-- Item Sheet Header --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Item Name"/></h1>
+    </div>
+  </header>
+
+  {{!-- Item Sheet Tabs --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="details">Details</a>
+  </nav>
+
+  {{!-- Item Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Description Tab --}}
+    <div class="tab" data-group="primary" data-tab="description">
+      {{editor enrichedDescription target="system.description" button=true owner=owner editable=editable}}
+    </div>
+
+    {{!-- Details Tab --}}
+    <div class="tab" data-group="primary" data-tab="details">
+
+      {{!-- Weapon Details --}}
+      {{#if (eq item.type "weapon")}}
+        <div class="form-group">
+          <label>Weapon Type:</label>
+          <select name="system.weaponType">
+            {{#each config.weaponTypes}}
+            <option value="@key" {{#if (eq ../system.weaponType @key)}}selected{{/if}}>{{this}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Damage:</label>
+          <input type="text" name="system.damage" value="{{system.damage}}" placeholder="1d6"/>
+        </div>
+        <div class="form-group">
+          <label>Damage Bonus:</label>
+          <input type="number" name="system.damageBonus" value="{{system.damageBonus}}" data-dtype="Number"/>
+        </div>
+        <div class="form-group">
+          <label>Attack Stat:</label>
+          <select name="system.attackStat">
+            {{#each config.attackStats}}
+            <option value="@key" {{#if (eq ../system.attackStat @key)}}selected{{/if}}>{{this}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="form-group">
+          <label><input type="checkbox" name="system.twoHanded" {{checked system.twoHanded}}/> Two-Handed (+2 damage)</label>
+        </div>
+        <div class="form-group">
+          <label>Edge Bonus:</label>
+          <input type="number" name="system.edge" value="{{system.edge}}" data-dtype="Number"/>
+        </div>
+      {{/if}}
+
+      {{!-- Armor Details --}}
+      {{#if (eq item.type "armor")}}
+        <div class="form-group">
+          <label>Armor Type:</label>
+          <select name="system.armorType">
+            {{#each config.armorTypes}}
+            <option value="@key" {{#if (eq ../system.armorType @key)}}selected{{/if}}>{{this}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Armor Bonus:</label>
+          <input type="number" name="system.armorBonus" value="{{system.armorBonus}}" data-dtype="Number"/>
+        </div>
+      {{/if}}
+
+      {{!-- Tree Node Details --}}
+      {{#if (eq item.type "treeNode")}}
+        <div class="form-group">
+          <label>Domain:</label>
+          <select name="system.domain">
+            {{#each config.domainTypes}}
+            <option value="@key" {{#if (eq ../system.domain @key)}}selected{{/if}}>{{this}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tree Name:</label>
+          <input type="text" name="system.tree" value="{{system.tree}}" placeholder="e.g., Combat Prowess"/>
+        </div>
+        <div class="form-group">
+          <label>Tier:</label>
+          <select name="system.tier">
+            {{#each config.tierTypes}}
+            <option value="@key" {{#if (eq ../system.tier @key)}}selected{{/if}}>{{this}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Trigger (How to unlock):</label>
+          <textarea name="system.trigger" rows="3">{{system.trigger}}</textarea>
+        </div>
+        <div class="form-group">
+          <label>Effect (What it does):</label>
+          <textarea name="system.effect" rows="3">{{system.effect}}</textarea>
+        </div>
+        <div class="form-group">
+          <label><input type="checkbox" name="system.unlocked" {{checked system.unlocked}}/> Unlocked</label>
+        </div>
+      {{/if}}
+
+      {{!-- Archetype Details --}}
+      {{#if (eq item.type "archetype")}}
+        <div class="form-group">
+          <label>Archetype Type:</label>
+          <select name="system.archetypeType">
+            {{#each config.archetypeTypes}}
+            <option value="@key" {{#if (eq ../system.archetypeType @key)}}selected{{/if}}>{{this}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Core Identity:</label>
+          <textarea name="system.coreIdentity" rows="2">{{system.coreIdentity}}</textarea>
+        </div>
+        <div class="form-group">
+          <label>Edge Bonus:</label>
+          <input type="number" name="system.edge" value="{{system.edge}}" data-dtype="Number"/>
+        </div>
+        <div class="form-group">
+          <label>Condition (When you get Edge):</label>
+          <textarea name="system.condition" rows="3">{{system.condition}}</textarea>
+        </div>
+      {{/if}}
+
+      {{!-- Domain Details --}}
+      {{#if (eq item.type "domain")}}
+        <div class="form-group">
+          <label>Domain Type:</label>
+          <select name="system.domainType">
+            {{#each config.domainTypes}}
+            <option value="@key" {{#if (eq ../system.domainType @key)}}selected{{/if}}>{{this}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Focus:</label>
+          <input type="text" name="system.focus" value="{{system.focus}}" placeholder="e.g., Physical force, warfare, command"/>
+        </div>
+      {{/if}}
+
+      {{!-- Tag Details --}}
+      {{#if (eq item.type "tag")}}
+        <div class="form-group">
+          <label>Tag Type:</label>
+          <select name="system.tagType">
+            <option value="character" {{#if (eq system.tagType "character")}}selected{{/if}}>Character</option>
+            <option value="equipment" {{#if (eq system.tagType "equipment")}}selected{{/if}}>Equipment</option>
+            <option value="location" {{#if (eq system.tagType "location")}}selected{{/if}}>Location</option>
+            <option value="situation" {{#if (eq system.tagType "situation")}}selected{{/if}}>Situation</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Edge Bonus:</label>
+          <input type="number" name="system.edge" value="{{system.edge}}" data-dtype="Number"/>
+        </div>
+        <div class="form-group">
+          <label>Condition:</label>
+          <textarea name="system.condition" rows="2">{{system.condition}}</textarea>
+        </div>
+        <div class="form-group">
+          <label><input type="checkbox" name="system.active" {{checked system.active}}/> Active</label>
+        </div>
+      {{/if}}
+
+      {{!-- Principle Details --}}
+      {{#if (eq item.type "principle")}}
+        <div class="form-group">
+          <label><input type="checkbox" name="system.active" {{checked system.active}}/> Active</label>
+        </div>
+        <div class="form-group">
+          <label>Current Severity (Moral Friction penalty):</label>
+          <input type="number" name="system.severity" value="{{system.severity}}" data-dtype="Number"/>
+        </div>
+      {{/if}}
+
+      {{!-- Physical Item Properties --}}
+      {{#if (or (eq item.type "weapon") (eq item.type "armor") (eq item.type "equipment"))}}
+        <hr/>
+        <div class="form-group">
+          <label>Quantity:</label>
+          <input type="number" name="system.quantity" value="{{system.quantity}}" data-dtype="Number" min="0"/>
+        </div>
+        <div class="form-group">
+          <label>Weight:</label>
+          <input type="number" name="system.weight" value="{{system.weight}}" data-dtype="Number" step="0.1"/>
+        </div>
+      {{/if}}
+
+    </div>
+
+  </section>
+</form>

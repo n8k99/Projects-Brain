@@ -1,0 +1,588 @@
+/* Global Styles */
+.thirteen-towers {
+  font-family: "Signika", sans-serif;
+}
+
+.thirteen-towers.sheet {
+  background: #f5f5f0;
+}
+
+/* Window Styles */
+.thirteen-towers.sheet header.sheet-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  background: #2c2c2c;
+  color: #f5f5f0;
+  border-bottom: 3px solid #8b4513;
+}
+
+.thirteen-towers.sheet header.sheet-header img.profile-img {
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
+  border: 2px solid #8b4513;
+}
+
+.thirteen-towers.sheet header.sheet-header .header-fields {
+  flex: 1;
+}
+
+.thirteen-towers.sheet header.sheet-header h1.charname {
+  margin: 0;
+  padding: 0;
+}
+
+.thirteen-towers.sheet header.sheet-header h1.charname input {
+  font-size: 2em;
+  font-weight: bold;
+  background: transparent;
+  border: none;
+  color: #f5f5f0;
+}
+
+.thirteen-towers.sheet .resource-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.thirteen-towers.sheet .resource {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.thirteen-towers.sheet .resource-label {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  color: #ccc;
+}
+
+.thirteen-towers.sheet .resource input,
+.thirteen-towers.sheet .resource select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #8b4513;
+  color: #f5f5f0;
+  padding: 2px 5px;
+}
+
+/* Tabs */
+.thirteen-towers.sheet nav.sheet-tabs {
+  display: flex;
+  border-bottom: 2px solid #8b4513;
+  background: #3c3c3c;
+}
+
+.thirteen-towers.sheet nav.sheet-tabs .item {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #f5f5f0;
+  border-right: 1px solid #8b4513;
+  cursor: pointer;
+}
+
+.thirteen-towers.sheet nav.sheet-tabs .item:hover {
+  background: #4c4c4c;
+}
+
+.thirteen-towers.sheet nav.sheet-tabs .item.active {
+  background: #8b4513;
+  color: #fff;
+}
+
+/* Sheet Body */
+.thirteen-towers.sheet .sheet-body {
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.thirteen-towers.sheet .sheet-body .tab {
+  display: none;
+}
+
+.thirteen-towers.sheet .sheet-body .tab.active {
+  display: block;
+}
+
+/* Stats Grid */
+.thirteen-towers.sheet .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.thirteen-towers.sheet .stat-block {
+  background: #fff;
+  border: 2px solid #8b4513;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.thirteen-towers.sheet .stat-name {
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  color: #8b4513;
+}
+
+.thirteen-towers.sheet .stat-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.thirteen-towers.sheet .stat-content input {
+  width: 60px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.thirteen-towers.sheet .stat-modifier {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #2c2c2c;
+}
+
+.thirteen-towers.sheet .stat-roll {
+  background: #8b4513;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.thirteen-towers.sheet .stat-roll:hover {
+  background: #a0522d;
+}
+
+/* Resources Grid */
+.thirteen-towers.sheet .resources-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.thirteen-towers.sheet .resource-block {
+  background: #fff;
+  border: 2px solid #8b4513;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+}
+
+.thirteen-towers.sheet .resource-block h3 {
+  margin: 0 0 10px 0;
+  color: #8b4513;
+  text-transform: uppercase;
+}
+
+.thirteen-towers.sheet .resource-content {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.thirteen-towers.sheet .resource-content input {
+  width: 60px;
+  text-align: center;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.thirteen-towers.sheet .defense-value {
+  font-size: 2em;
+  color: #8b4513;
+}
+
+/* Harm Section */
+.thirteen-towers.sheet .harm-section {
+  background: #fff;
+  border: 2px solid #8b4513;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.thirteen-towers.sheet .harm-section h3 {
+  margin: 0 0 10px 0;
+  color: #8b4513;
+  text-transform: uppercase;
+}
+
+.thirteen-towers.sheet .harm-levels {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thirteen-towers.sheet .harm-level {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.thirteen-towers.sheet .harm-level input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+.thirteen-towers.sheet .harm-level label {
+  min-width: 100px;
+  font-weight: bold;
+}
+
+.thirteen-towers.sheet .harm-level input[type="text"] {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Advanced Systems */
+.thirteen-towers.sheet .advanced-systems {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.thirteen-towers.sheet .moral-friction,
+.thirteen-towers.sheet .draconic-attention {
+  background: #fff;
+  border: 2px solid #8b4513;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.thirteen-towers.sheet .moral-friction h3,
+.thirteen-towers.sheet .draconic-attention h3 {
+  margin: 0 0 10px 0;
+  color: #8b4513;
+  text-transform: uppercase;
+}
+
+/* Items Section */
+.thirteen-towers.sheet .items-section {
+  background: #fff;
+  border: 2px solid #8b4513;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.thirteen-towers.sheet .items-section h3 {
+  margin: 0 0 10px 0;
+  color: #8b4513;
+  text-transform: uppercase;
+  border-bottom: 1px solid #8b4513;
+  padding-bottom: 5px;
+}
+
+.thirteen-towers.sheet .item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.thirteen-towers.sheet .item-list .item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.thirteen-towers.sheet .item-list .item:hover {
+  background: #f9f9f9;
+}
+
+.thirteen-towers.sheet .item-image {
+  flex: 0 0 24px;
+  margin-right: 10px;
+}
+
+.thirteen-towers.sheet .item-image img {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.thirteen-towers.sheet .item-name {
+  flex: 1;
+  font-weight: bold;
+}
+
+.thirteen-towers.sheet .item-detail {
+  margin-right: 10px;
+  color: #666;
+}
+
+.thirteen-towers.sheet .item-equipped label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 10px;
+}
+
+.thirteen-towers.sheet .item-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.thirteen-towers.sheet .item-control {
+  color: #8b4513;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.thirteen-towers.sheet .item-control:hover {
+  color: #a0522d;
+}
+
+.thirteen-towers.sheet .item-create {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: #8b4513;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.thirteen-towers.sheet .item-create:hover {
+  background: #a0522d;
+}
+
+/* Domains Section */
+.thirteen-towers.sheet .domains-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.thirteen-towers.sheet .domain-block {
+  background: #fff;
+  border: 2px solid #8b4513;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+}
+
+.thirteen-towers.sheet .domain-block h4 {
+  margin: 0 0 10px 0;
+  color: #8b4513;
+  text-transform: uppercase;
+}
+
+/* Tree Nodes Section */
+.thirteen-towers.sheet .tree-nodes-section {
+  background: #fff;
+  border: 2px solid #8b4513;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.thirteen-towers.sheet .tree-nodes-section h3 {
+  margin: 0 0 10px 0;
+  color: #8b4513;
+  text-transform: uppercase;
+  border-bottom: 1px solid #8b4513;
+  padding-bottom: 5px;
+}
+
+.thirteen-towers.sheet .item-unlocked label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 10px;
+}
+
+/* Principles Section */
+.thirteen-towers.sheet .principles-section {
+  background: #fff;
+  border: 2px solid #8b4513;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.thirteen-towers.sheet .principles-section h3 {
+  margin: 0 0 10px 0;
+  color: #8b4513;
+  text-transform: uppercase;
+  border-bottom: 1px solid #8b4513;
+  padding-bottom: 5px;
+}
+
+/* NPC Framework */
+.thirteen-towers.sheet .npc-framework {
+  background: #fff;
+  border: 2px solid #8b4513;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.thirteen-towers.sheet .framework-field {
+  margin-bottom: 15px;
+}
+
+.thirteen-towers.sheet .framework-field label {
+  display: block;
+  font-weight: bold;
+  color: #8b4513;
+  margin-bottom: 5px;
+}
+
+.thirteen-towers.sheet .framework-field input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Biography Section */
+.thirteen-towers.sheet .biography-section {
+  background: #fff;
+  border: 2px solid #8b4513;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.thirteen-towers.sheet .biography-section h3 {
+  margin: 0 0 10px 0;
+  color: #8b4513;
+  text-transform: uppercase;
+}
+
+/* Item Sheet Styles */
+.thirteen-towers.sheet.item {
+  min-height: 400px;
+}
+
+.thirteen-towers.sheet.item .form-group {
+  margin-bottom: 15px;
+}
+
+.thirteen-towers.sheet.item .form-group label {
+  display: block;
+  font-weight: bold;
+  color: #8b4513;
+  margin-bottom: 5px;
+}
+
+.thirteen-towers.sheet.item .form-group input,
+.thirteen-towers.sheet.item .form-group select,
+.thirteen-towers.sheet.item .form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.thirteen-towers.sheet.item .form-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+/* Chat Message Styles */
+.thirteen-towers.roll-check {
+  padding: 10px;
+  background: #f5f5f0;
+  border: 2px solid #8b4513;
+  border-radius: 5px;
+}
+
+.thirteen-towers.roll-check .roll-result {
+  text-align: center;
+}
+
+.thirteen-towers.roll-check .roll-result.success {
+  border-left: 4px solid #4caf50;
+}
+
+.thirteen-towers.roll-check .roll-result.partial {
+  border-left: 4px solid #ff9800;
+}
+
+.thirteen-towers.roll-check .roll-result.failure {
+  border-left: 4px solid #f44336;
+}
+
+.thirteen-towers.roll-check .roll-formula {
+  font-family: monospace;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.thirteen-towers.roll-check .roll-total {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.thirteen-towers.roll-check .vs {
+  margin: 0 10px;
+  color: #666;
+}
+
+.thirteen-towers.roll-check .success-level {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+.thirteen-towers.roll-check .roll-breakdown {
+  margin-top: 5px;
+  color: #666;
+}
+
+.thirteen-towers.position-effect {
+  padding: 10px;
+  background: #f5f5f0;
+  border: 2px solid #8b4513;
+  border-radius: 5px;
+}
+
+.thirteen-towers.position-effect .position,
+.thirteen-towers.position-effect .effect {
+  margin-bottom: 10px;
+}
+
+.thirteen-towers.position-effect h4 {
+  margin: 0 0 5px 0;
+  color: #8b4513;
+  text-transform: uppercase;
+}
+
+/* Scrollbar Styles */
+.thirteen-towers.sheet .sheet-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.thirteen-towers.sheet .sheet-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.thirteen-towers.sheet .sheet-body::-webkit-scrollbar-thumb {
+  background: #8b4513;
+  border-radius: 4px;
+}
+
+.thirteen-towers.sheet .sheet-body::-webkit-scrollbar-thumb:hover {
+  background: #a0522d;
+}

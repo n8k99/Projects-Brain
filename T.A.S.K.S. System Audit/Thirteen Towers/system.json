@@ -1,0 +1,55 @@
+{
+  "id": "thirteen-towers",
+  "title": "The Thirteen Towers",
+  "description": "A narrative investigation game set on Orbis - a medieval fantasy world hiding science fiction secrets.",
+  "version": "0.9.0",
+  "authors": [
+    {
+      "name": "N8 / Eckenrode Muziekopname",
+      "flags": {}
+    }
+  ],
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12.331",
+    "maximum": "12"
+  },
+  "esmodules": [
+    "module/thirteen-towers.mjs"
+  ],
+  "styles": [
+    "css/thirteen-towers.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "character": {},
+      "npc": {}
+    },
+    "Item": {
+      "archetype": {},
+      "domain": {},
+      "treeNode": {},
+      "weapon": {},
+      "armor": {},
+      "equipment": {},
+      "tag": {},
+      "principle": {}
+    }
+  },
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "resolve",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "LICENSE.txt",
+  "manifestPlusVersion": "1.0.0"
+}
