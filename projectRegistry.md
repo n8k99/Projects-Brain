@@ -90,10 +90,11 @@ Last updated: 2026-01-31 21:11 EST
 ### Morning Pages & Ghost Tiers
 - **ID:** morning-pages-001
 - **Description:** Daily writing pipeline → Ghost CMS tiered content (Red Tier automation, Green Poster workflow)
-- **Status:** 🟢 ACTIVE (ongoing production)
-- **Current Focus:** Content automation, Printful poster integration, tier distribution
+- **Status:** 🟡 IN PROGRESS (morningPagesGhost workflow needs development)
+- **Current Focus:** Workflow development, agent blog post setup, content automation, Printful poster integration
 - **Owner:** Kathryn (Projects)
 - **Location:** Ghost CMS | n8n workflows | Printful integration
+- **Notes:** Includes setting up agent for automated blog post writing
 
 ---
 
