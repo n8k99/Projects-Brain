@@ -28,7 +28,7 @@ Last updated: 2026-01-31 21:11 EST
 - **Status:** 🟢 LIVE (2026-01-31)
 - **Verification:** ✅ Live at https://n8k99.com, DNS configured, site deployed
 - **Current Focus:** Ghost CMS integration for Thought Police content
-- **GitHub Repo:** https://github.com/n8k99/Dragonpunknoittheme
+- **GitHub Repo:** https://github.com/n8k99/dragonpunk-noir-theme
 - **Location:** `/Volumes/Elements/Projects/Active Projects/n8k99.com/` | `/Users/nathaneckenrode/n8k99-site/` (local) | DigitalOcean (production)
 
 ### Eckenrode Muziekopname (EM Operations)

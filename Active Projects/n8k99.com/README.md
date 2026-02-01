@@ -1,7 +1,7 @@
 # n8k99.com Website
 
 **Status:** 🟢 LIVE (2026-01-31)  
-**GitHub Repo:** https://github.com/n8k99/Dragonpunknoittheme  
+**GitHub Repo:** https://github.com/n8k99/dragonpunk-noir-theme  
 **Live Site:** https://n8k99.com  
 **Deployed:** DigitalOcean droplet (PM2 + Nginx)
 
