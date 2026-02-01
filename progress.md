@@ -58,13 +58,29 @@ es members-only content automatically.
 decisionLog.md`.                                                                                                                                                                                             
 - **Status Update**: Phase 2 (Templating & Refactoring) complete; significantly enhanced consistency and navigability of Orbis lore.                                                                           
                                                                                                                                                                                                               
+### n8k99-site-infrastructure-001 (n8k99.com Infrastructure Audit)
+- **Linked TODO Tasks**: #pm2-config-restore-001, #discord-integration-001, #site-connections-001.
+- **Date**: 2026-02-01.
+- **Summary**: Discovered PM2 process crash (SIGKILL, 15:56 EST). Process `n8k99-site` killed unexpectedly; no `ecosystem.config.js` found on production droplet (144.126.251.126). Site remains accessible via Nginx (no user-facing downtime). Gateway spawn issues resolved via restart. Investigation revealed missing PM2 configuration preventing process recovery. Nginx serving stale/current state successfully.
+- **Status Update**: Phase 1 (Audit) complete; follow-up issues generated: Restore/recreate ecosystem.config.js, add Discord server link to n8k99.com, explore additional connection opportunities (social integrations, webhooks).
+- **Next Steps**: 
+  - [ ] Recreate PM2 ecosystem.config.js for production deployment
+  - [ ] Add Eckenrode Muziekopname Discord server link to website footer/connections
+  - [ ] Audit other integration opportunities (RSS, webhooks, etc.)
+
 ## Doing (Active Momentum)
 
 - **Project ID**: gaming-system-001.
   - **Linked TODO Tasks**: N/A (Complete).
   - **Focus**: The Thirteen Towers Gaming System - comprehensive TTRPG system.
   - **Owner/Role**: Game Designer.
-  - **Status**: ~98% complete, playable and ready for playtesting.                                                                                                                                                                                  
+  - **Status**: ~98% complete, playable and ready for playtesting.
+
+- **Project ID**: n8k99-site-infrastructure-001.
+  - **Linked TODO Tasks**: #pm2-config-restore-001, #discord-integration-001, #site-connections-001.
+  - **Focus**: Fix PM2 deployment config, add Discord link, explore site connections.
+  - **Owner/Role**: Infrastructure/DevOps.
+  - **Status**: Audit complete; implementation phase starting.                                                                                                                                                                                  
                                                                                                                                                                                                               
 ## Next Momentum                                                                                                                                                                                              
                                                                                                                                                                                                               
