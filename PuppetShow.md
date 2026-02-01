@@ -6,6 +6,29 @@
 
 ---
 
+## Vision: Clawdbot as Nervous System
+
+**Goal:** Transform Clawdbot from a tool into the nervous system infrastructure for EM operations + Orbis Worldbuilding.
+
+**How It Works:**
+- You sit in Discord/Foundry and think out loud
+- Puppet Show automatically cascades research and work across background channels
+- EM Staff personas (Sylvia, Eliana, Kathryn, Lena, etc.) coordinate work in parallel
+- Results synthesize and surface to you without management overhead
+- You never see the machinery — just the results
+
+**Success Criteria:**
+- One directive triggers multi-channel async work
+- Device continuity maintained (phone ↔ computer)
+- Fallback chains work (Claude → OpenAI → Ollama)
+- System self-heals (automatic recovery when services available)
+- Token measurement enables optimization
+
+**Status:** Foundation working ✅ (vault access, database access, multi-channel infrastructure, persona framework)  
+**Missing:** Orchestration layer (auto-trigger workflows), contradiction detection, fallback chains, token measurement
+
+---
+
 ## Overview
 
 The Puppet Show is a Moltbot skill that routes work to the appropriate EM Staff member based on:
