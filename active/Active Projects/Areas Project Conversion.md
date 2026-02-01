@@ -27,7 +27,7 @@ Assess the viability of treating notes in the 02 Areas/ directory as formal proj
 - Agents can reliably find project details via registry → spec → tasks flow
 - Consistent tagging system established for filtering tasks by project
 
-**Related Documentation:** [[projectsRegistry]] | [[TODO]]
+**Related Documentation:** [[projectRegistry]] | [[TODO]]
 
 ---
 
@@ -115,7 +115,7 @@ Tasks: see `TODO.md` with tags `#proj-areas-conversion-001 #phase-5`.
 
 ## 📚 Related Files
 
-- [[projectsRegistry]] - Master project index
+- [[projectRegistry]] - Master project index
 - [[TODO]] - Canonical task store
 - 02 Areas/ - Target directory for assessment
 - standardOperatingProcedures.md - Existing project patterns

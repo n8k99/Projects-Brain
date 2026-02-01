@@ -12,7 +12,7 @@ estimated_effort: Large (4-6 weeks)
 priority: Quality of Life
 project_status: Backlog
 ---
-[[projectsRegistry#Worldbuilding Automation & Integration System|View Project in Registry]]
+[[projectRegistry#Worldbuilding Automation & Integration System|View Project in Registry]]
 
 # FMG-Vault Geographic Graph Integration
 

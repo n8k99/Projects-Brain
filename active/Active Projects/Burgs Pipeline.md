@@ -4,7 +4,7 @@ title: Burgs Pipeline
 department: "[[TechnicalDevelopmentOffice]]"
 Department Head: "[[Historical Lore/Master Chronicle/01 Age of Arrival (-10,000 to -9,900 AY)/EM Staff/ElianaRiviera]]"
 ---
-[[projectsRegistry#Burgs Pipeline|View Project in Registry]]
+[[projectRegistry#Burgs Pipeline|View Project in Registry]]
 
 # 🏘️Burgs Pipeline Architecture
 
