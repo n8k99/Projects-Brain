@@ -83,8 +83,9 @@ Last updated: 2026-01-31 21:11 EST
 ### The Myths of Orbis (Narrative Podcast)
 - **ID:** orbis-podcast-001
 - **Description:** Serialized narrative chapters published on Captivate FM
-- **Status:** 🟢 ACTIVE (ongoing publication)
-- **Current Focus:** Episode integration with n8k99 site, lore consistency with Master Chronicle
+- **Status:** 🟡 IN PROGRESS (waiting on recording; unblocking needed)
+- **Current Focus:** Recording episodes, episode integration with n8k99 site, lore consistency with Master Chronicle
+- **Blocker:** Awaiting recordings from Nathan
 - **Location:** https://feeds.captivate.fm/the-myths-of-orbis/
 
 ### Morning Pages & Ghost Tiers
