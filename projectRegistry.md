@@ -95,17 +95,18 @@ Last updated: 2026-01-31 21:11 EST
 - **Owner:** Kathryn (Projects)
 - **Location:** Ghost CMS | n8n workflows | Printful integration
 
-### Claude & Domain Migration Plan
-- **ID:** claude-migration-001
-- **Description:** Migrate from CEO@EckenrodeMuziekopname.com Claude Pro to new account; transition to n8k99.com domain; reorganize Claude Projects; launch Myths of Orbis podcast
-- **Status:** 🟢 COMPLETE (2025-12-17, critical deadline met)
-- **Completed Work:** New Claude account created, vault documents curated, domain DNS migrated, 4 streamlined Claude Projects organized, n8n workflows deployed, Myths of Orbis launched on Captivate
-- **Owner:** N8 (Engineering) with Eliana support
-- **Location:** `/Volumes/Elements/Projects/` | n8k99.com | Captivate.fm
-
 ---
 
 ## Archived Projects
+
+### Claude & Domain Migration Plan
+- **ID:** claude-migration-001
+- **Description:** Migrate from CEO@EckenrodeMuziekopname.com Claude Pro to new account; transition to n8k99.com domain; reorganize Claude Projects; launch Myths of Orbis podcast
+- **Status:** ✅ COMPLETE (2025-12-17, critical deadline met)
+- **Completed Work:** New Claude account created, vault documents curated, domain DNS migrated, 4 streamlined Claude Projects organized, n8n workflows deployed, Myths of Orbis launched on Captivate
+- **Owner:** N8 (Engineering) with Eliana support
+- **Location:** `/Volumes/Elements/Projects/` | n8k99.com | Captivate.fm
+- **Archived:** 2026-02-01
 
 (None currently archived — add when projects reach completion or indefinite pause)
 
