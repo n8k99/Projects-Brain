@@ -12,6 +12,16 @@ Last updated: 2026-01-31 21:11 EST
 
 ## Active Projects
 
+### Puppet Show (EM Staff Orchestration)
+- **ID:** puppet-show-001
+- **Description:** Moltbot skill for automated task delegation to EM Staff personas based on roles, responsibilities, and skills
+- **Status:** 🟡 IN PROGRESS (foundational work, Phase 1 complete)
+- **Current Focus:** Router implementation, skill integration, orchestration layer
+- **Vision:** Transform Clawdbot into nervous system for EM operations + Orbis worldbuilding
+- **Location:** `/Volumes/Elements/Projects/Active Projects/Puppet Show/`
+- **Key Concept:** EM Staff (63 people) → responsibilities → skill mappings → automated delegation
+- **Operational Hub:** Lena Morris (EM Operations Coordinator) provides human oversight and escalation
+
 ### n8k99 (Web Presence)
 - **ID:** n8k99-001
 - **Description:** Personal website with podcast feeds (Living Room Music, Myths of Orbis, Thought Police)
@@ -98,6 +108,7 @@ Last updated: 2026-01-31 21:11 EST
 
 | Project | Status | Docs | TODO |
 |---------|--------|------|------|
+| Puppet Show | 🟡 | `/Volumes/Elements/Projects/Active Projects/Puppet Show/` | See TODO.md puppet-show section |
 | n8k99 | 🟢 | `/Users/nathaneckenrode/n8k99-site/` | See TODO.md n8k99 section |
 | EM | 🟡 | `/Volumes/Elements/Areas/Eckenrode Muziekopname/` | See TODO.md em section |
 | Orbis | 🟡 | `/Volumes/Elements/Master Chronicle/` | See TODO.md orbis section |
