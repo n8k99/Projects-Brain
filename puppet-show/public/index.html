@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎭 Puppet Show - Project Coordination</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <h1>🎭 Puppet Show Project Coordination</h1>
+        <p>Executive project management system</p>
+      </div>
+      <div class="header-status">
+        <span id="discord-status" class="status-badge">Discord: <span class="loading">⏳</span></span>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="dashboard">📊 Dashboard</button>
+      <button class="tab-btn" data-tab="projects">📋 Projects</button>
+      <button class="tab-btn" data-tab="timeline">📅 Timeline</button>
+      <button class="tab-btn" data-tab="create">➕ New Project</button>
+    </nav>
+
+    <!-- Dashboard Tab -->
+    <section id="dashboard" class="tab-content active">
+      <div class="dashboard-grid">
+        <div class="stat-card">
+          <div class="stat-icon">🆕</div>
+          <div class="stat-info">
+            <h3>Proposed</h3>
+            <p class="stat-number" id="stat-proposed">0</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🟢</div>
+          <div class="stat-info">
+            <h3>Active</h3>
+            <p class="stat-number" id="stat-active">0</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⚙️</div>
+          <div class="stat-info">
+            <h3>In Progress</h3>
+            <p class="stat-number" id="stat-in-progress">0</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-info">
+            <h3>Complete</h3>
+            <p class="stat-number" id="stat-complete">0</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Upcoming Deadlines</h2>
+      <div class="timeline-list" id="timeline-list">
+        <p class="empty">Loading timeline...</p>
+      </div>
+    </section>
+
+    <!-- Projects Tab -->
+    <section id="projects" class="tab-content">
+      <div class="filter-bar">
+        <input type="text" id="search-projects" placeholder="🔍 Search projects...">
+        <select id="filter-status">
+          <option value="">All Status</option>
+          <option value="PROPOSED">Proposed</option>
+          <option value="ACTIVE">Active</option>
+          <option value="IN_PROGRESS">In Progress</option>
+          <option value="COMPLETE">Complete</option>
+        </select>
+        <select id="filter-proposer">
+          <option value="">All Proposers</option>
+          <option value="Sylvia">Sylvia</option>
+          <option value="Vincent">Vincent</option>
+          <option value="Kathryn">Kathryn</option>
+          <option value="Morgan">Morgan</option>
+          <option value="Eliana">Eliana</option>
+          <option value="Maxwell">Maxwell</option>
+          <option value="Sarah">Sarah</option>
+        </select>
+      </div>
+
+      <div class="projects-list" id="projects-list">
+        <p class="empty">Loading projects...</p>
+      </div>
+    </section>
+
+    <!-- Timeline Tab -->
+    <section id="timeline" class="tab-content">
+      <h2>Project Timeline by Target Completion</h2>
+      <div class="timeline-view" id="timeline-view">
+        <p class="empty">Loading timeline...</p>
+      </div>
+    </section>
+
+    <!-- Create Project Tab -->
+    <section id="create" class="tab-content">
+      <div class="form-container">
+        <h2>Create New Project</h2>
+        <form id="create-project-form">
+          <div class="form-group">
+            <label for="form-title">Project Title *</label>
+            <input type="text" id="form-title" required placeholder="Enter project title">
+          </div>
+
+          <div class="form-group">
+            <label for="form-proposer">Proposer *</label>
+            <select id="form-proposer" required>
+              <option value="">Select proposer</option>
+              <option value="Sylvia">Sylvia</option>
+              <option value="Vincent">Vincent</option>
+              <option value="Kathryn">Kathryn</option>
+              <option value="Morgan">Morgan</option>
+              <option value="Eliana">Eliana</option>
+              <option value="Maxwell">Maxwell</option>
+              <option value="Sarah">Sarah</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="form-description">Description</label>
+            <textarea id="form-description" placeholder="Project description" rows="4"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="form-team">Assigned Team</label>
+            <input type="text" id="form-team" placeholder="Team name or members">
+          </div>
+
+          <div class="form-group">
+            <label for="form-target">Target Completion Date</label>
+            <input type="date" id="form-target">
+          </div>
+
+          <div class="form-group">
+            <label for="form-objectives">Objectives (JSON)</label>
+            <textarea id="form-objectives" placeholder='{"objectives": ["obj1", "obj2"]}' rows="3"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="form-budget">Budget (JSON)</label>
+            <textarea id="form-budget" placeholder='{"amount": 0, "currency": "USD"}' rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary">Create Project</button>
+          <div id="form-message" class="form-message"></div>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- Project Detail Modal -->
+  <div id="detail-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div id="modal-body">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

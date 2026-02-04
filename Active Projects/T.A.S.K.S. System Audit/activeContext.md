@@ -53,3 +53,35 @@ None. All systems operational (FD leak cleared, gateway restarted).
 3. Read Thirteen Towers/README.md fully to understand current state
 4. Map remaining work to 2-week timeline (identify critical path)
 5. Start first diary entry for agent-chronicle (capture initial state, today's discoveries)
+
+---
+
+## ADDENDUM — 2026-02-04 (System Refactor Work)
+
+### PROBLEM UPDATE
+- T.A.S.K.S. must behave like a real agent (OpenClaw-style): workspace-first memory, heartbeat-driven autonomy, and file access across `/Volumes/Elements`.
+- Multiple legacy repos and broken symlinks created drift and startup inconsistency.
+
+### APPROACH UPDATE
+1. Canonicalize runtime to `/Volumes/Elements/Development/tasks`.
+2. Enable heartbeat loop (30 min) with SOUL/HEARTBEAT/MEMORY and Daily Notes logging.
+3. Add agent startup readiness report and system event queue.
+4. Implement provider fallback: Claude → OpenAI → Ollama (hybrid).
+5. Keep context switching via symlinks for `activeContext.md` and `decisionLog.md`.
+
+### BLOCKERS (CURRENT)
+- Some skills still reference `/Volumes/Elements/Development/tasks/config.json` (should use central config).
+- Location/Scene workflow API signature mismatch (function expects 1 arg, called with 2).
+
+### RECENT DECISIONS (TODAY)
+- Archived legacy TASKS repos into `_archive_tasks_versions/`.
+- Set central config path `/Volumes/Elements/Development/config.json`.
+- Disabled `web_search` skill auto-trigger (prevents hijacking normal chat).
+- Added safe absolute file read + fuzzy path resolution for `/Volumes/Elements`.
+- Added file write + script execution directives for agent actions.
+
+### NEXT IMMEDIATE STEPS (TODAY)
+1. Fix skills still loading config from old path.
+2. Validate heartbeat writes + memory updates end-to-end.
+3. Verify file read/write/execute actions in live Discord flow.
+4. Resume Thirteen Towers audit work once core autonomy is stable.

@@ -1,0 +1,30 @@
+{
+  "name": "puppet-show",
+  "version": "1.0.0",
+  "description": "Puppet Show Project Coordination System - Executive project management with orchestrator integration",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "puppet-show",
+    "project-management",
+    "orchestrator",
+    "discord",
+    "coordination"
+  ],
+  "author": "N8K99",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.13.4",
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "discord.js": "^14.25.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "sqlite3": "^5.1.7"
+  }
+}

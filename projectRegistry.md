@@ -6,7 +6,7 @@ title: projectsRegistry
 
 **Canonical list of all active and archived projects for T.A.S.K.S.**
 
-Last updated: 2026-01-31 21:11 EST
+Last updated: 2026-02-01 16:40 EST
 
 ---
 
@@ -67,11 +67,12 @@ Last updated: 2026-01-31 21:11 EST
 ### Auditing Development (Code Repo Inventory)
 - **ID:** dev-audit-001
 - **Description:** Audit all modules in Development/, ensure each has GitHub repo for version control + verification
-- **Status:** 🟡 IN PROGRESS
-- **Current Focus:** Catalog existing modules, create GitHub repos, establish code organization standard
+- **Status:** 🔴 BLOCKED
+- **Blocker:** Waiting on T.A.S.K.S. System Audit (tasks-audit-001) to be completed
+- **Current Focus:** Waiting for system audit completion before proceeding with code organization
 - **Related:** architect.md Code Organization constraint, git verification protocol, Puppet Show foundation
 - **Location:** `/Volumes/Elements/Development/`
-- **Next Step:** List all modules, identify which need repos, create them on GitHub
+- **Dependency:** T.A.S.K.S. System Audit (tasks-audit-001)
 
 ### Living Room Music (Podcast Archive)
 - **ID:** lrm-001
@@ -83,15 +84,63 @@ Last updated: 2026-01-31 21:11 EST
 ### The Myths of Orbis (Narrative Podcast)
 - **ID:** orbis-podcast-001
 - **Description:** Serialized narrative chapters published on Captivate FM
-- **Status:** 🟢 ACTIVE (ongoing publication)
-- **Current Focus:** Episode integration with n8k99 site, lore consistency with Master Chronicle
+- **Status:** 🟡 IN PROGRESS (waiting on recording; unblocking needed)
+- **Current Focus:** Recording episodes, episode integration with n8k99 site, lore consistency with Master Chronicle
+- **Blocker:** Awaiting recordings from Nathan
 - **Location:** https://feeds.captivate.fm/the-myths-of-orbis/
+
+### Morning Pages & Ghost Tiers
+- **ID:** morning-pages-001
+- **Description:** Daily writing pipeline → Ghost CMS tiered content (Red Tier automation, Green Poster workflow)
+- **Status:** 🟡 IN PROGRESS (morningPagesGhost workflow needs development)
+- **Current Focus:** Workflow development, agent blog post setup, content automation, Printful poster integration
+- **Owner:** Kathryn (Projects)
+- **Location:** Ghost CMS | n8n workflows | Printful integration
+- **Notes:** Includes setting up agent for automated blog post writing
+
+### Foundry OpenClaw Channel
+- **ID:** foundry-openclaw-001
+- **Description:** Foundry chat interface for OpenClaw, enabling Nathan to terraform Orbis while delegating to EM Staff with NPC dialogue flowing back
+- **Status:** 🔭 CONCEPTUAL (research phase, implementation starts post-T.A.S.K.S. audit)
+- **Current Focus:** Research OpenClaw channel architecture, design foundry-mcp API, sketch NPC routing
+- **Vision:** Chat with T.A.S.K.S. in Foundry → Delegate to EM Staff → NPC responses appear as in-world dialogue
+- **Related Projects:** Puppet Show (EM orchestration), Thirteen Towers (Foundry system), Orbis (world state)
+- **Blockers:** T.A.S.K.S. System Audit (tasks-audit-001) must complete first (Feb 15 deadline)
+- **Location:** `/Volumes/Elements/Projects/Active Projects/Foundry OpenClaw Channel/`
+
+### LLM Token & Cost Accounting
+- **ID:** llm-token-accounting-001
+- **Description:** Track token usage and monetary costs across all LLM services (Claude, OpenAI, etc.) with daily/weekly/quarterly reporting
+- **Status:** 🔭 CONCEPTUAL (design phase, ready for implementation)
+- **Current Focus:** Establish token logging strategy, design data schema, plan aggregation scripts
+- **Vision:** Daily, weekly, and quarterly visibility into AI infrastructure costs by provider and use case
+- **Scope:** API logging → Daily aggregation → Weekly rollup → Quarterly reporting
+- **No Blockers:** Can start immediately (independent project)
+- **Location:** `/Volumes/Elements/Projects/Active Projects/LLM Token & Cost Accounting/`
+
+### Model Selection & Routing
+- **ID:** model-routing-001
+- **Description:** Strategic methodology for choosing local Ollama vs Claude vs OpenAI based on task type, quality requirements, and cost
+- **Status:** 🔭 CONCEPTUAL (taxonomy building phase)
+- **Current Focus:** Build task classification system, create capability matrix, define decision rules
+- **Vision:** Route tasks to lowest-cost model that meets quality thresholds (Ollama first, Claude for complex, GPT-4o for specialized)
+- **Scope:** Task taxonomy → Capability matrix → Router logic → Fallback chains → Outcome tracking
+- **Related:** LLM Token Accounting (measures impact), T.A.S.K.S. (uses routing)
+- **No Blockers:** Can start immediately (independent project)
+- **Location:** `/Volumes/Elements/Projects/Active Projects/Model Selection & Routing/`
 
 ---
 
 ## Archived Projects
 
-(None currently archived — add when projects reach completion or indefinite pause)
+### Claude & Domain Migration Plan
+- **ID:** claude-migration-001
+- **Description:** Migrate from CEO@EckenrodeMuziekopname.com Claude Pro to new account; transition to n8k99.com domain; reorganize Claude Projects; launch Myths of Orbis podcast
+- **Status:** ✅ COMPLETE (2025-12-17, critical deadline met)
+- **Completed Work:** New Claude account created, vault documents curated, domain DNS migrated, 4 streamlined Claude Projects organized, n8n workflows deployed, Myths of Orbis launched on Captivate
+- **Owner:** N8 (Engineering) with Eliana support
+- **Location:** `/Volumes/Elements/Projects/` | n8k99.com | Captivate.fm
+- **Archived:** 2026-02-01
 
 ---
 
@@ -121,63 +170,3 @@ Last updated: 2026-01-31 21:11 EST
 ---
 
 *Registry maintained per architect.md Project OS Layer. Update when projects start/stop/shift status.*
-
----
-
-# Projects Registry
-
-## Active Projects
-
-### [[Orbis Worldbuilding]]
-🆔 orbis-001
-➕ Created: 2025-12-01
-📅 Target Finish: Ongoing
-- **Scope**: Burgs, NPCs, maps, adventures for Orbis TTRPG setting.
-- **Expected Work**: Run automation scripts, refine templates
-- **Status**: Active.
-- **Owner**: Eliana / ENGINEERING .
-- **Links**: `scripts/`, Engineering Projects/.
-
-### [[Morning Pages & Ghost Tiers]]
-🆔 morning-pages-001
-➕ Created: 2025-12-01
-📅 Target Finish: Ongoing
-- **Scope**: Daily writing → Ghost CMS tiered content.
-- **Expected Work**: Automate parsing, feed generation, Printful sync.
-- **Status**: Active.
-- **Owner**: Kathryn / PROJECTS.
-- **Links**: `scripts/base_modules/ghost_client.py`, `scripts/base_modules/morning_pages.py`.
-
-### [[T.A.S.K.S. Core]]
-🆔 tasks-core-001
-➕ Created: 2025-12-01
-📅 Target Finish: Ongoing
-- **Scope**: AI platform for vault automation (memory, prompts, tools).
-- **Expected Work**: Maintain working scripts, extend when blocked.
-- **Status**: Active (maintenance mode).
-- **Owner**: Eliana / ENGINEERING.
-- **Links**: `scripts/base_modules/`, `scripts/skills/`.
-
-### [[Thirteen Towers Gaming System]]
-🆔 gaming-system-001
-➕ Created: 2025-12-10
-📅 Target Finish: 2026-Q3 (MVP), 2026-Q4 (Complete)
-- **Scope**: Complete TTRPG system for Orbis - mechanics, archetypes, trees, advancement, combat rules.
-- **Expected Work**: Develop missing mechanical frameworks, create 30-60 progression trees, write 6+ archetypes, establish calibration tools for Position/Effect, playtest and refine.
-- **Status**: Active - Late Alpha/Early Beta (conceptually complete, mechanically incomplete).
-- **Owner**: N8 / PROJECTS.
-- **Phase**: Critical development priorities - character creation, archetypes, trees, Position/Effect matrix, Edge calculations.
-- **Links**: `The_Thirteen_Towers_Gaming_System.md`, `01 Projects/Active Projects/Thirteen Towers Gaming System.md`.
-
-### [[Claude & Domain Migration Plan]]
-🆔 claude-migration-001
-➕ Created: 2025-12-12
-📅 Target Finish: 2025-12-17 (Critical), Full completion 2026-Q1
-- **Scope**: Migrate from CEO@EckenrodeMuziekopname.com Claude Pro to new account; transition from EckenrodeMuziekopname.com to n8k99.com domain; reorganize 4 streamlined Claude Projects; modernize infrastructure with n8n workflows; launch "The Myths of Orbis" podcast.
-- **Expected Work**: Create new Claude account, upload curated vault documents to 4 Projects (Orbis, T.A.S.K.S., Content, Operations), migrate domain DNS, update all platform configurations, build n8n automation workflows, develop Discord bots.
-- **Status**: Active - Day 1 of 5-day critical migration period.
-- **Owner**: N8 / ENGINEERING (with support from Eliana for technical implementation).
-- **Phase**: Audit & Preparation (Day 1), then Extract & Organize (Day 2), Build Projects (Days 3-4), Test & Transition (Day 5).
-- **Links**: `01 Projects/Active Projects/Claude & Domain Migration Plan.md`, `02 memory-bank/TODO.md`.
-- **Critical Deadline**: December 17, 2025 - Current Claude Pro account downgrades to Basic.
-- **Dependencies**: New Claude Pro account creation, vault document curation, domain DNS access, Captivate.fm configuration, n8n instance setup.
