@@ -98,37 +98,6 @@ Last updated: 2026-02-01 16:40 EST
 - **Location:** Ghost CMS | n8n workflows | Printful integration
 - **Notes:** Includes setting up agent for automated blog post writing
 
-### Foundry OpenClaw Channel
-- **ID:** foundry-openclaw-001
-- **Description:** Foundry chat interface for OpenClaw, enabling Nathan to terraform Orbis while delegating to EM Staff with NPC dialogue flowing back
-- **Status:** 🔭 CONCEPTUAL (research phase, implementation starts post-T.A.S.K.S. audit)
-- **Current Focus:** Research OpenClaw channel architecture, design foundry-mcp API, sketch NPC routing
-- **Vision:** Chat with T.A.S.K.S. in Foundry → Delegate to EM Staff → NPC responses appear as in-world dialogue
-- **Related Projects:** Puppet Show (EM orchestration), Thirteen Towers (Foundry system), Orbis (world state)
-- **Blockers:** T.A.S.K.S. System Audit (tasks-audit-001) must complete first (Feb 15 deadline)
-- **Location:** `/Volumes/Elements/Projects/Active Projects/Foundry OpenClaw Channel/`
-
-### LLM Token & Cost Accounting
-- **ID:** llm-token-accounting-001
-- **Description:** Track token usage and monetary costs across all LLM services (Claude, OpenAI, etc.) with daily/weekly/quarterly reporting
-- **Status:** 🔭 CONCEPTUAL (design phase, ready for implementation)
-- **Current Focus:** Establish token logging strategy, design data schema, plan aggregation scripts
-- **Vision:** Daily, weekly, and quarterly visibility into AI infrastructure costs by provider and use case
-- **Scope:** API logging → Daily aggregation → Weekly rollup → Quarterly reporting
-- **No Blockers:** Can start immediately (independent project)
-- **Location:** `/Volumes/Elements/Projects/Active Projects/LLM Token & Cost Accounting/`
-
-### Model Selection & Routing
-- **ID:** model-routing-001
-- **Description:** Strategic methodology for choosing local Ollama vs Claude vs OpenAI based on task type, quality requirements, and cost
-- **Status:** 🔭 CONCEPTUAL (taxonomy building phase)
-- **Current Focus:** Build task classification system, create capability matrix, define decision rules
-- **Vision:** Route tasks to lowest-cost model that meets quality thresholds (Ollama first, Claude for complex, GPT-4o for specialized)
-- **Scope:** Task taxonomy → Capability matrix → Router logic → Fallback chains → Outcome tracking
-- **Related:** LLM Token Accounting (measures impact), T.A.S.K.S. (uses routing)
-- **No Blockers:** Can start immediately (independent project)
-- **Location:** `/Volumes/Elements/Projects/Active Projects/Model Selection & Routing/`
-
 ---
 
 ## Archived Projects
@@ -141,6 +110,8 @@ Last updated: 2026-02-01 16:40 EST
 - **Owner:** N8 (Engineering) with Eliana support
 - **Location:** `/Volumes/Elements/Projects/` | n8k99.com | Captivate.fm
 - **Archived:** 2026-02-01
+
+(None currently archived — add when projects reach completion or indefinite pause)
 
 ---
 
